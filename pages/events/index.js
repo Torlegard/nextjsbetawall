@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useColorMode, Heading, Text, Flex, Stack } from '@chakra-ui/react';
 
-import Container from '../../components/container';
+import Container from '../../components/Container';
 
 function AllEventsPage() {
   const { colorMode } = useColorMode();

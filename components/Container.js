@@ -1,9 +1,10 @@
 // This is a wrapper for any page we want to add the website and saves a lot of time by not re-writing our basic pages.
 import React from 'react';
-import { useColorMode, Spacer, Button, Flex, Box, IconButton, HamburgerIcon, CloseIcon } from '@chakra-ui/react';
+import { useColorMode, Spacer, Button, Flex, Box, IconButton } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
+import { useState }  from 'react';
 
 import DarkModeSwitch from '../components/DarkModeSwitch';
 
@@ -61,7 +62,7 @@ const Container = ({ children }) => {
           </NextLink>
         </Box>
         <Spacer />
-        <Box>
+        <Box display={['none', 'none', 'flex', 'flex']}>
           <NextLink href='/' passHref>
             <Button as='a' variant='ghost' p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
               Pictures
@@ -73,9 +74,16 @@ const Container = ({ children }) => {
             </Button>
           </NextLink>
         </Box>
-
+        <IconButton
+          aria-label='Open Menu'
+          size='lg'
+          mr={2}
+          icon={<HamburgerIcon />}
+          display={['flex', 'flex', 'none', 'none']}
+        />
         <DarkModeSwitch />
       </StickyNav>
+
       <Flex
         as='main'
         justifyContent='center'
@@ -87,6 +95,9 @@ const Container = ({ children }) => {
       >
         {children}
       </Flex>
+
+      
+      
     </>
   );
 };
