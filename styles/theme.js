@@ -8,6 +8,7 @@ const fonts = {
   heading: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
 };
 
+// 
 const breakPoints = createBreakpoints({
   sm: "40em",
   md: "52em",

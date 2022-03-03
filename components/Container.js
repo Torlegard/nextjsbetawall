@@ -1,16 +1,22 @@
 // This is a wrapper for any page we want to add the website and saves a lot of time by not re-writing our basic pages.
 import React from 'react';
-import { useColorMode, Button, Flex, Box } from '@chakra-ui/react';
+import { useColorMode, Spacer, Button, Flex, Box, IconButton, HamburgerIcon, CloseIcon } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import styled from '@emotion/styled';
+import { useState } from 'react';
 
 import DarkModeSwitch from '../components/DarkModeSwitch';
 
 const Container = ({ children }) => {
   const { colorMode } = useColorMode();
 
+  const navColor = {
+    light: 'gray.50',
+    dark: 'purple.900',
+  };
+
   const bgColor = {
-    light: 'white',
+    light: '#white',
     dark: '#171717',
   };
   const navHoverBg = {
@@ -32,36 +38,42 @@ const Container = ({ children }) => {
   return (
     <>
       <StickyNav
-      flexDirection="row"
-      justifyContent="space-between"
-      alignItems="center"
-      maxWidth="800px"
-      minWidth="356px"
-      width="100%"
-      bg={bgColor[colorMode]}
-      as="nav"
-      px={[2, 6, 6]}
-      py={2}
-      mt={8}
-      mb={[0, 0, 8]}
-      mx="auto">
+        flexDirection='row'
+        justifyContent='space-between'
+        alignItems='center'
+        maxWidth='1400px'
+        minWidth='356px'
+        width='100%'
+        height='100%'
+        bg={navColor[colorMode]}
+        as='nav'
+        px={[2, 6, 6]}
+        py={2}
+        mt={1}
+        mb={[0, 0, 8]}
+        mx='auto'
+      >
         <Box>
           <NextLink href='/' passHref>
             <Button as='a' variant='ghost' p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
               BetaWall
             </Button>
           </NextLink>
+        </Box>
+        <Spacer />
+        <Box>
           <NextLink href='/' passHref>
             <Button as='a' variant='ghost' p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
               Pictures
             </Button>
           </NextLink>
-          <NextLink href='/' passHref>
+          <NextLink href='../events/' passHref>
             <Button as='a' variant='ghost' p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
               Events
             </Button>
           </NextLink>
         </Box>
+
         <DarkModeSwitch />
       </StickyNav>
       <Flex
