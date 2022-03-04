@@ -1,32 +1,32 @@
 const DUMMY_EVENTS = [
     {
       id: 'e1',
-      title: 'Programming for everyone',
+      title: 'Big Wall Climbing',
       description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
-      location: 'Somestreet 25, 12345 San Somewhereo',
-      date: '2021-05-12',
-      image: 'images/coding-event.jpg',
+        'This time we take it to Yosemite National Park in Californy.',
+      location: 'Yosemite National Park, California, USA',
+      date: '2022-05-12',
+      image: 'images/climb1.jpg',
       isFeatured: false,
     },
     {
       id: 'e2',
-      title: 'Networking for introverts',
+      title: 'Lead-climbing course',
       description:
-        "We know: Networking is no fun if you are an introvert person. That's why we came up with this event - it'll be so much easier. Promised!",
-      location: 'New Wall Street 5, 98765 New Work',
-      date: '2021-05-30',
-      image: 'images/introvert-event.jpg',
+        "Get your lead-climbing card and learn by the best instructors in Sweden in this 2 day course",
+      location: 'Utby, Gothenburg, Sweden',
+      date: '2022-06-25' && '2022-06-26',
+      image: 'images/climb2.jpg',
       isFeatured: true,
     },
     {
       id: 'e3',
-      title: 'Networking for extroverts',
+      title: 'Climbing Festival',
       description:
-        'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
-      location: 'My Street 12, 10115 Broke City',
-      date: '2022-04-10',
-      image: 'images/extrovert-event.jpg',
+        'Join the yearly climbing festival in Lofoten, Norway. There will be hundreds of climbers showing off and hanging out on the rock. Lots of prices and giveaways promised',
+      location: 'Lofoten, Norway',
+      date: '2022-07-10' && '2022-07-11',
+      image: 'images/climb4.jpg',
       isFeatured: true,
     },
   ];

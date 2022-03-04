@@ -13,7 +13,7 @@ const Container = ({ children }) => {
 
   const navColor = {
     light: 'gray.50',
-    dark: 'purple.900',
+    dark: 'gray.900',
   };
 
   const bgColor = {
@@ -21,8 +21,8 @@ const Container = ({ children }) => {
     dark: '#171717',
   };
   const navHoverBg = {
-    light: 'gray.600',
-    dark: 'gray.300',
+    light: 'gray.200',
+    dark: 'gray.600',
   };
   const color = {
     light: 'black',
@@ -63,13 +63,13 @@ const Container = ({ children }) => {
         </Box>
         <Spacer />
         <Box display={['none', 'none', 'flex', 'flex']}>
-          <NextLink href='/' passHref>
-            <Button as='a' variant='ghost' p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+          <NextLink href='../pictures/' passHref>
+            <Button as='a' variant='outline' p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
               Pictures
             </Button>
           </NextLink>
           <NextLink href='../events/' passHref>
-            <Button as='a' variant='ghost' p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+            <Button as='a' variant='outline'  p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
               Events
             </Button>
           </NextLink>
