@@ -38,11 +38,12 @@ const Container = ({ children }) => {
   `;
   return (
     <>
+      
       <StickyNav
         flexDirection='row'
         justifyContent='space-between'
         alignItems='center'
-        maxWidth='1400px'
+        maxWidth='100%'
         minWidth='356px'
         width='100%'
         height='100%'
@@ -83,7 +84,8 @@ const Container = ({ children }) => {
         />
         <DarkModeSwitch />
       </StickyNav>
-
+      
+      
       <Flex
         as='main'
         justifyContent='center'
