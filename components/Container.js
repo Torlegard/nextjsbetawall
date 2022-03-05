@@ -3,8 +3,8 @@ import React from 'react';
 import { useColorMode, Spacer, Button, Flex, Box, IconButton } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import styled from '@emotion/styled';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
-import { useState }  from 'react';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { useState } from 'react';
 
 import DarkModeSwitch from '../components/DarkModeSwitch';
 
@@ -38,7 +38,6 @@ const Container = ({ children }) => {
   `;
   return (
     <>
-      
       <StickyNav
         flexDirection='row'
         justifyContent='space-between'
@@ -65,12 +64,12 @@ const Container = ({ children }) => {
         <Spacer />
         <Box display={['none', 'none', 'flex', 'flex']}>
           <NextLink href='../pictures/' passHref>
-            <Button as='a' variant='outline' p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+            <Button as='a' variant='outline' mr={1} p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
               Pictures
             </Button>
           </NextLink>
           <NextLink href='../events/' passHref>
-            <Button as='a' variant='outline'  p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+            <Button as='a' variant='outline' mr={1} p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
               Events
             </Button>
           </NextLink>
@@ -84,8 +83,7 @@ const Container = ({ children }) => {
         />
         <DarkModeSwitch />
       </StickyNav>
-      
-      
+
       <Flex
         as='main'
         justifyContent='center'
@@ -97,9 +95,6 @@ const Container = ({ children }) => {
       >
         {children}
       </Flex>
-
-      
-      
     </>
   );
 };
