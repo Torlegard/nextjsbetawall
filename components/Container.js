@@ -37,7 +37,7 @@ const Container = ({ children }) => {
     top: 0;
     backdrop-filter: saturate(180%) blur(20px);
     transition: height 0.5s, line-height 0.5s;
-    `;
+  `;
 
   return (
     <>
@@ -60,7 +60,7 @@ const Container = ({ children }) => {
             <Button
               as='a'
               variant='ghost'
-              p={[1, 2, 4]}
+              p={[1, 2, 4]} 
               _hover={{ backgroundColor: navHoverBg[colorMode] }}
             >
               BetaWall
@@ -99,7 +99,6 @@ const Container = ({ children }) => {
         />
         <Spacer />
         <DarkModeSwitch />
-        
       </StickyNav>
 
       <StickyNav display={['flex', 'flex', 'none', 'none']}>
@@ -138,6 +137,7 @@ const Container = ({ children }) => {
                   variant='ghost'
                   my={5}
                   w='100%'
+                  onClick={() => changeDisplay('none')}
                   _hover={{ backgroundColor: navHoverBg[colorMode] }}
                 >
                   Home
@@ -149,6 +149,7 @@ const Container = ({ children }) => {
                   variant='ghost'
                   my={5}
                   w='100%'
+                  onClick={() => changeDisplay('none')}
                   _hover={{ backgroundColor: navHoverBg[colorMode] }}
                 >
                   Pictures
@@ -160,6 +161,7 @@ const Container = ({ children }) => {
                   variant='ghost'
                   my={5}
                   w='100%'
+                  onClick={() => changeDisplay('none')}
                   _hover={{ backgroundColor: navHoverBg[colorMode] }}
                 >
                   Events
@@ -177,9 +179,8 @@ const Container = ({ children }) => {
         color={color[colorMode]}
         px={[0, 4, 4]}
         mt={[4, 8, 8]}
-      >
-      </Flex>
-        {children}
+      ></Flex>
+      {children}
     </>
   );
 };
