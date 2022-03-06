@@ -25,12 +25,14 @@ export default function Index() {
         maxWidth='700px'
         px={2}
       >
-        <Flex flexDirection='column' justifyContent='flex-start' alignItems='center' maxWidth='600px'>
-          <Heading mb='1'>Find 'em & Flash 'em</Heading>
-          <Text color={colorSecondary[colorMode]}>
-            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-          </Text>
-        </Flex>
+      <Flex flexDirection='column' justifyContent='flex-start' alignItems='center' maxWidth='600px'>
+        <Heading mb='1'>Find 'em & Flash 'em</Heading>
+        <Text color={colorSecondary[colorMode]}>
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+          velit...
+        </Text>
+      </Flex>
+      
       </Stack>
       <SwiperPage />
     </Container>

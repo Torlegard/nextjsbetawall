@@ -11,6 +11,8 @@ import DarkModeSwitch from '../components/DarkModeSwitch';
 const Container = ({ children }) => {
   const { colorMode } = useColorMode();
 
+  const [display, changeDisplay] = useState('none');
+
   const navColor = {
     light: 'gray.50',
     dark: 'gray.900',
@@ -35,55 +37,138 @@ const Container = ({ children }) => {
     top: 0;
     backdrop-filter: saturate(180%) blur(20px);
     transition: height 0.5s, line-height 0.5s;
-  `;
+    `;
+
   return (
     <>
       <StickyNav
-        flexDirection='row'
+        pos='sticky'
+        top='1rem'
+        right='1rem'
+        bg={navColor[colorMode]}
+        align='center'
+        as='nav'
         justifyContent='space-between'
-        alignItems='center'
+        direction='row'
+        width='100%'
+        height='3rem'
         maxWidth='100%'
         minWidth='356px'
-        width='100%'
-        height='100%'
-        bg={navColor[colorMode]}
-        as='nav'
-        px={[2, 6, 6]}
-        py={2}
-        mt={1}
-        mb={[0, 0, 8]}
-        mx='auto'
       >
-        <Box>
+        <Flex display={['none', 'none', 'flex', 'flex']}>
           <NextLink href='/' passHref>
-            <Button as='a' variant='ghost' p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+            <Button
+              as='a'
+              variant='ghost'
+              p={[1, 2, 4]}
+              _hover={{ backgroundColor: navHoverBg[colorMode] }}
+            >
               BetaWall
             </Button>
           </NextLink>
-        </Box>
-        <Spacer />
-        <Box display={['none', 'none', 'flex', 'flex']}>
           <NextLink href='../pictures/' passHref>
-            <Button as='a' variant='outline' mr={1} p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+            <Button
+              as='a'
+              variant='outline'
+              mr={1}
+              p={[1, 2, 4]}
+              _hover={{ backgroundColor: navHoverBg[colorMode] }}
+            >
               Pictures
             </Button>
           </NextLink>
           <NextLink href='../events/' passHref>
-            <Button as='a' variant='outline' mr={1} p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }}>
+            <Button
+              as='a'
+              variant='outline'
+              mr={1}
+              p={[1, 2, 4]}
+              _hover={{ backgroundColor: navHoverBg[colorMode] }}
+            >
               Events
             </Button>
           </NextLink>
-        </Box>
+        </Flex>
         <IconButton
           aria-label='Open Menu'
-          size='lg'
-          mr={2}
+          size='md'
+          mr={3}
           icon={<HamburgerIcon />}
           display={['flex', 'flex', 'none', 'none']}
+          onClick={() => changeDisplay('flex')}
         />
+        <Spacer />
         <DarkModeSwitch />
+        
       </StickyNav>
 
+      <StickyNav display={['flex', 'flex', 'none', 'none']}>
+        <Flex
+          w='100vw'
+          h='100vh'
+          zIndex={20}
+          bg={navColor[colorMode]}
+          top='0'
+          left='0'
+          flexDir='column'
+          position='fixed'
+          display={display}
+        >
+          <Flex justify='flex-end'>
+            <IconButton
+              aria-label='Close Menu'
+              size='md'
+              mt={2}
+              mr={2}
+              icon={<CloseIcon />}
+              onClick={() => changeDisplay('none')}
+            />
+          </Flex>
+          <Flex
+            flexDir='column'
+            align='center'
+            //
+            // maxWidth='100%'
+            // minWidth='356px'
+          >
+            <Flex>
+              <NextLink href='/' passHref>
+                <Button
+                  as='a'
+                  variant='ghost'
+                  my={5}
+                  w='100%'
+                  _hover={{ backgroundColor: navHoverBg[colorMode] }}
+                >
+                  Home
+                </Button>
+              </NextLink>
+              <NextLink href='../pictures' passHref>
+                <Button
+                  as='a'
+                  variant='ghost'
+                  my={5}
+                  w='100%'
+                  _hover={{ backgroundColor: navHoverBg[colorMode] }}
+                >
+                  Pictures
+                </Button>
+              </NextLink>
+              <NextLink href='../events' passHref>
+                <Button
+                  as='a'
+                  variant='ghost'
+                  my={5}
+                  w='100%'
+                  _hover={{ backgroundColor: navHoverBg[colorMode] }}
+                >
+                  Events
+                </Button>
+              </NextLink>
+            </Flex>
+          </Flex>
+        </Flex>
+      </StickyNav>
       <Flex
         as='main'
         justifyContent='center'
@@ -93,8 +178,8 @@ const Container = ({ children }) => {
         px={[0, 4, 4]}
         mt={[4, 8, 8]}
       >
-        {children}
       </Flex>
+        {children}
     </>
   );
 };
