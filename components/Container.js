@@ -1,6 +1,6 @@
 // This is a wrapper for any page we want to add the website and saves a lot of time by not re-writing our basic pages.
 import React from 'react';
-import { useColorMode, Spacer, Button, Flex, Box, IconButton } from '@chakra-ui/react';
+import { useColorMode, Button, Flex, IconButton } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import styled from '@emotion/styled';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
@@ -60,7 +60,7 @@ const Container = ({ children }) => {
             <Button
               as='a'
               variant='ghost'
-              p={[1, 2, 4]} 
+              p={[1, 2, 4]}
               _hover={{ backgroundColor: navHoverBg[colorMode] }}
             >
               BetaWall
@@ -97,7 +97,7 @@ const Container = ({ children }) => {
           display={['flex', 'flex', 'none', 'none']}
           onClick={() => changeDisplay('flex')}
         />
-        <Spacer />
+
         <DarkModeSwitch />
       </StickyNav>
 
@@ -118,18 +118,12 @@ const Container = ({ children }) => {
               aria-label='Close Menu'
               size='md'
               mt={2}
-              mr={2}
+              mr={5}
               icon={<CloseIcon />}
               onClick={() => changeDisplay('none')}
             />
           </Flex>
-          <Flex
-            flexDir='column'
-            align='center'
-            //
-            // maxWidth='100%'
-            // minWidth='356px'
-          >
+          <Flex flexDir='column' align='center'>
             <Flex>
               <NextLink href='/' passHref>
                 <Button

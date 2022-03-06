@@ -33,7 +33,6 @@ function AllEventsPage() {
         <Fragment>
           <EventSearch onSearch={findEventsHandler} />
           <EventList items={events} />
-          {/* <EventList items={featuredEvents} /> */}
         </Fragment>
       </Container>
     );

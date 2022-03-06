@@ -27,7 +27,7 @@ function PicturePage() {
         maxWidth='700px'
         px={2}
       >
-        <Heading alignItems='center' mb='2'>
+        <Heading alignItems='center' mb='2' color={colorSecondary[colorMode]}>
           Fan Pictures of the Month!
         </Heading>
       </Stack>
