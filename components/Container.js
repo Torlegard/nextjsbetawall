@@ -1,10 +1,11 @@
 // This is a wrapper for any page we want to add the website and saves a lot of time by not re-writing our basic pages.
 import React from 'react';
-import { useColorMode, Button, Flex, IconButton } from '@chakra-ui/react';
+import { useColorMode, Button, Flex, IconButton, Spacer } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import styled from '@emotion/styled';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
+import Logo from './Logo';
 
 import DarkModeSwitch from '../components/DarkModeSwitch';
 
@@ -48,19 +49,19 @@ const Container = ({ children }) => {
         bg={navColor[colorMode]}
         align='center'
         as='nav'
-        justifyContent='space-between'
         direction='row'
         width='100%'
-        height='3rem'
+        height='4rem'
         maxWidth='100%'
         minWidth='356px'
       >
+        <Logo />
         <Flex display={['none', 'none', 'flex', 'flex']}>
           <NextLink href='/' passHref>
             <Button
+              m='2%'
               as='a'
               variant='ghost'
-              p={[1, 2, 4]}
               _hover={{ backgroundColor: navHoverBg[colorMode] }}
             >
               BetaWall
@@ -68,10 +69,9 @@ const Container = ({ children }) => {
           </NextLink>
           <NextLink href='../pictures/' passHref>
             <Button
+              m='2%'
               as='a'
-              variant='outline'
-              mr={1}
-              p={[1, 2, 4]}
+              variant='ghost'
               _hover={{ backgroundColor: navHoverBg[colorMode] }}
             >
               Pictures
@@ -79,16 +79,16 @@ const Container = ({ children }) => {
           </NextLink>
           <NextLink href='../events/' passHref>
             <Button
+              m='2%'
               as='a'
-              variant='outline'
-              mr={1}
-              p={[1, 2, 4]}
+              variant='ghost'
               _hover={{ backgroundColor: navHoverBg[colorMode] }}
             >
               Events
             </Button>
           </NextLink>
         </Flex>
+        <Spacer />
         <IconButton
           aria-label='Open Menu'
           size='md'
@@ -97,7 +97,6 @@ const Container = ({ children }) => {
           display={['flex', 'flex', 'none', 'none']}
           onClick={() => changeDisplay('flex')}
         />
-
         <DarkModeSwitch />
       </StickyNav>
 
@@ -124,44 +123,42 @@ const Container = ({ children }) => {
             />
           </Flex>
           <Flex flexDir='column' align='center'>
-            <Flex>
-              <NextLink href='/' passHref>
-                <Button
-                  as='a'
-                  variant='ghost'
-                  my={5}
-                  w='100%'
-                  onClick={() => changeDisplay('none')}
-                  _hover={{ backgroundColor: navHoverBg[colorMode] }}
-                >
-                  Home
-                </Button>
-              </NextLink>
-              <NextLink href='../pictures' passHref>
-                <Button
-                  as='a'
-                  variant='ghost'
-                  my={5}
-                  w='100%'
-                  onClick={() => changeDisplay('none')}
-                  _hover={{ backgroundColor: navHoverBg[colorMode] }}
-                >
-                  Pictures
-                </Button>
-              </NextLink>
-              <NextLink href='../events' passHref>
-                <Button
-                  as='a'
-                  variant='ghost'
-                  my={5}
-                  w='100%'
-                  onClick={() => changeDisplay('none')}
-                  _hover={{ backgroundColor: navHoverBg[colorMode] }}
-                >
-                  Events
-                </Button>
-              </NextLink>
-            </Flex>
+            <NextLink href='/' passHref>
+              <Button
+                as='a'
+                variant='ghost'
+                my={5}
+                w='100%'
+                onClick={() => changeDisplay('none')}
+                _hover={{ backgroundColor: navHoverBg[colorMode] }}
+              >
+                Home
+              </Button>
+            </NextLink>
+            <NextLink href='../pictures' passHref>
+              <Button
+                as='a'
+                variant='ghost'
+                my={5}
+                w='100%'
+                onClick={() => changeDisplay('none')}
+                _hover={{ backgroundColor: navHoverBg[colorMode] }}
+              >
+                Pictures
+              </Button>
+            </NextLink>
+            <NextLink href='../events' passHref>
+              <Button
+                as='a'
+                variant='ghost'
+                my={5}
+                w='100%'
+                onClick={() => changeDisplay('none')}
+                _hover={{ backgroundColor: navHoverBg[colorMode] }}
+              >
+                Events
+              </Button>
+            </NextLink>
           </Flex>
         </Flex>
       </StickyNav>

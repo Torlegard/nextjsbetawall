@@ -35,16 +35,13 @@ export default function Index() {
           alignItems='center'
           maxWidth='600px'
         >
-          
-          <Heading color={colorSecondary[colorMode]}>
-            Your Climbing Hub
-          </Heading>
+          <Heading color={colorSecondary[colorMode]}>Your Climbing Hub</Heading>
           <Text mb='3em' color={colorSecondary[colorMode]}>
             "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
             velit...
           </Text>
+          <FeatureGrid />
         </Flex>
-        <FeatureGrid />
       </Stack>
       <SwiperPage />
       <SimpleGrid columns={[1, 1, 1, 1]} spacing='30px'>
@@ -53,9 +50,8 @@ export default function Index() {
             Upcoming Events.
           </Text>
           <EventList items={featuredEvents} />
-        </Box>  
+        </Box>
       </SimpleGrid>
-      
     </Container>
   );
 }

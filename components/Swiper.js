@@ -8,7 +8,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 function SwiperPage() {
-
   return (
     <Center mb='1em'>
       <Box maxW='70%'>

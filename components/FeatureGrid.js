@@ -9,7 +9,7 @@ function FeatureGrid() {
     dark: 'gray.400',
   };
   return (
-    <SimpleGrid  width='90vw' columns={3} spacingX='100px'>
+    <SimpleGrid  width='90vw' columns={[1, 1, 3, 3]} spacingX='100px'>
       <Box align='center'>
         <Icon color='orange.200' as={FaSearch} aria-label='Find Rocks' boxSize='50px' />
         <Text fontSize='2xl' color={colorSecondary[colorMode]}>

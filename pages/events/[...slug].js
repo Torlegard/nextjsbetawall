@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { Fragment } from 'react';
+import { Fragment, } from 'react';
 import { getFilteredEvents } from '../../dummy-data';
 import Container from '../../components/Container';
 import ErrorAlert from '../../components/ui/error-alert';
