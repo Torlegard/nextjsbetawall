@@ -12,6 +12,7 @@ import Container from '../../components/Container';
 function AllEventsPage() {
   const router = useRouter();
   const events = getAllEvents();
+  
 
   const { colorMode } = useColorMode();
 

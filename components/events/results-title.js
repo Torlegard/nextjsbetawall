@@ -2,6 +2,7 @@
 // import classes from './results-title.module.css';
 import { Box, Heading, Button, Center, useColorMode } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import { ArrowBackIcon } from '@chakra-ui/icons';
 
 function ResultsTitle(props) {
   const { date } = props;
@@ -23,7 +24,9 @@ function ResultsTitle(props) {
         <Heading>Events in {humanReadableDate}</Heading>
         <br />
         <NextLink href='/events' passHref>
-          <Button variant='outline'>Show all events</Button>
+        <Button mt={2} leftIcon={<ArrowBackIcon />} variant='outline'>
+                Back to all events
+              </Button>
         </NextLink>
       </Box>
     </Center>

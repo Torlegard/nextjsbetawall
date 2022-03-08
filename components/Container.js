@@ -8,6 +8,7 @@ import { useState } from 'react';
 import Logo from './Logo';
 
 import DarkModeSwitch from '../components/DarkModeSwitch';
+import SmallFooter from './Footer';
 
 const Container = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -98,7 +99,9 @@ const Container = ({ children }) => {
           onClick={() => changeDisplay('flex')}
         />
         <DarkModeSwitch />
+        
       </StickyNav>
+      
 
       <StickyNav display={['flex', 'flex', 'none', 'none']}>
         <Flex
@@ -160,6 +163,7 @@ const Container = ({ children }) => {
               </Button>
             </NextLink>
           </Flex>
+          <SmallFooter />
         </Flex>
       </StickyNav>
       <Flex
@@ -172,6 +176,7 @@ const Container = ({ children }) => {
         mt={[4, 8, 8]}
       ></Flex>
       {children}
+      <SmallFooter />
     </>
   );
 };

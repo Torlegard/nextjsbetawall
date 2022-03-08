@@ -1,14 +1,14 @@
 import { useRouter } from 'next/router';
+import NextLink from 'next/link';
 import { Fragment, } from 'react';
 import { Box, Heading, Center, Button } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
-import NextLink from 'next/link';
 import { getFilteredEvents } from '../../dummy-data';
 import Container from '../../components/Container';
 import ErrorAlert from '../../components/ui/error-alert';
 import EventList from '../../components/events/event-list';
 import ResultsTitle from '../../components/events/results-title';
-// import Button from '../../components/ui/button';
+
 
 function FilteredEventsPage() {
   const router = useRouter();
