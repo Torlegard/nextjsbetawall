@@ -6,6 +6,7 @@ import Container from '../components/Container';
 import SwiperPage from '../components/Swiper';
 import { getFeaturedEvents } from '../dummy-data';
 import FeatureGrid from '../components/FeatureGrid';
+import SmallFooter from '../components/Footer';
 
 export default function Index() {
   const featuredEvents = getFeaturedEvents();
@@ -36,10 +37,7 @@ export default function Index() {
           maxWidth='600px'
         >
           <Heading color={colorSecondary[colorMode]}>Your Climbing Hub</Heading>
-          <Text mb='3em' color={colorSecondary[colorMode]}>
-            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-            velit...
-          </Text>
+          <Text mb='3em' color={colorSecondary[colorMode]}></Text>
           <FeatureGrid />
         </Flex>
       </Stack>
