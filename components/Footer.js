@@ -1,14 +1,9 @@
 import {
-  Box,
-  chakra,
-  Container,
   Button,
   IconButton,
-  Spacer,
   Center,
   Flex,
   useColorMode,
-  VisuallyHidden,
 } from '@chakra-ui/react';
 import Logo from './Logo';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
@@ -19,8 +14,11 @@ function SmallFooter() {
 
   return (
     <Center>
+        
       <Flex mt='5rem' spacing='2px' h='3rem' justify='center' w='50%' bg={[colorMode]}>
-        <Flex align='flex-end'>
+      
+        <Flex align='center'>
+        <Logo />
           <NextLink href='/' passHref>
             <Button p='2' as='a' variant='link'>
               Home

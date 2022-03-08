@@ -99,9 +99,7 @@ const Container = ({ children }) => {
           onClick={() => changeDisplay('flex')}
         />
         <DarkModeSwitch />
-        
       </StickyNav>
-      
 
       <StickyNav display={['flex', 'flex', 'none', 'none']}>
         <Flex
