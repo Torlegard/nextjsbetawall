@@ -1,12 +1,12 @@
+import { Fragment } from 'react';
+import { useColorMode } from '@chakra-ui/react';
 import Head from 'next/head';
-import { useColorMode, Heading, Text, Flex, Stack } from '@chakra-ui/react';
-import { getAllEvents } from '../../dummy-data';
 import { useRouter } from 'next/router';
+import { getAllEvents } from '../../dummy-data';
 import EventList from '../../components/events/event-list';
 import EventSearch from '../../components/events/events-search';
-import { Fragment } from 'react';
-
 import Container from '../../components/Container';
+
 
 
 function AllEventsPage() {
